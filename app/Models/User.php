@@ -41,4 +41,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function scopeCoach($query) {
+        return $query->where('is_coach',1);
+    }
 }
